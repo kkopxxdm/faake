@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>تم اختراقك</title>
+  <style>
+    body {
+      background-color: black;
+      color: #0f0;
+      font-family: monospace;
+      text-align: center;
+      padding-top: 100px;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 3em;
+      animation: flicker 0.5s infinite alternate;
+      color: red;
+    }
+
+    p {
+      font-size: 1.5em;
+      margin-top: 30px;
+    }
+
+    @keyframes flicker {
+      from { opacity: 1; }
+      to { opacity: 0.2; }
+    }
+
+    .warning {
+      color: yellow;
+      font-size: 1.2em;
+      margin-top: 50px;
+    }
+
+    .scan {
+      color: cyan;
+      margin-top: 20px;
+      animation: flicker 1s infinite;
+    }
+  </style>
+</head>
+<body>
+  <h1>⚠️ جاري سحب بياناتك ⚠️</h1>
+  <p class="scan">IP: جارٍ التحديد...<br>الموقع: جارٍ التحديد...</p>
+  <p class="warning">لا تقم بإغلاق الصفحة! سيتم تصفير جميع بياناتك!</p>
+
+  <audio autoplay loop>
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_187d42e183.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    setTimeout(() => {
+      document.querySelector('.scan').innerHTML = 'IP: 192.168.1.666<br>الموقع: العراق - بغداد';
+    }, 3000);
+  </script>
+</body>
+</html>
